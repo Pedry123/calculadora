@@ -1,14 +1,9 @@
 #include<stdio.h>
 
-void leituraDoisValores();
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao();
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), seno(double a);
 
-
-void leituraDoisValores(double a, double b) {
-    scanf("%lf %lf", &a, &b);
-}
 double soma(double a, double b) {
-    
+    scanf("%lf %lf", &a, &b);
     return a + b;
 }
 
@@ -26,6 +21,36 @@ double divisao(double a, double b) {
     scanf("%lf %lf", &a, &b);
     return a / b;
 }
+
+double modulo(double a) {
+    scanf("%lf", &a);
+    if (a < 0) {
+        return -a;
+    } else {
+        return a;
+    }
+}
+
+double fatorial(double a) {
+    scanf("%lf", &a);
+    int fat = 1;
+    for(int i = a; i > 0; i--) {
+        fat *= i;
+    }
+    return fat;
+}
+
+double exponencial(double a, double b) {
+    scanf("%lf %lf", &a, &b);
+    double exp = 1;
+    if (b != 0) {
+        for(int i = 0; i < b; i++) {
+            exp *= a;
+        }
+    } 
+    return exp;
+}
+
 int main() {
 
     double x, y, resultado;
@@ -41,10 +66,19 @@ int main() {
                 resultado = subtracao(x, y);
                 break;
         case '*':
-                //multiplicacao();
+                resultado = multiplicacao(x, y);
                 break;
         case '/':
-                //divisao();  
+                resultado = divisao(x, y);
+                break;
+        case 'm':
+                resultado = modulo(x);
+                break;
+        case 'f':
+                resultado = fatorial(x);
+                break;
+        case 'e':
+                resultado = exponencial(x, y);
                 break;
         default:
                 break;
