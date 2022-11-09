@@ -27,7 +27,7 @@ double modulo(double a) {
 }
 
 double fatorial(double a) {
-    int fat = 1;
+    double fat = 1.0;
     for(int i = a; i > 0; i--) {
         fat *= i;
     }
@@ -47,11 +47,20 @@ double exponencial(double a, double b) {
 }
 
 double seno(double a) {
-    int soma = 0;
+    double soma = 0;
 
-    for(int j = 0; j < 20; j++) {
-        double i = (double) j;
-        soma += exponencial(-1.0, i) * exponencial(a,  2.0 * i + 1) / fatorial(2.0 * i + 1);
+    for(int i = 0; i < 20; i++) {
+        soma += (exponencial(-1.0, i) / fatorial(2.0 * i + 1)) * exponencial(a,  2.0 * i + 1) ;
+    }
+
+    return soma;
+}
+
+double cosseno(double a){
+    double soma = 0;
+
+    for(int i = 0; i < 20; i++) {
+        soma += (exponencial(-1, i) / fatorial(2 * i)) * exponencial(a, 2 * i);
     }
 
     return soma;
@@ -96,6 +105,10 @@ int main() {
         case 's':
                 scanf("%lf", &x);
                 resultado = seno(x);
+                break;
+        case 'c':
+                scanf("%lf", &x);
+                resultado = cosseno(x);
                 break;
         default:
                 break;
