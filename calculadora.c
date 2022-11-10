@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a);
+double serie = 0;
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), log(double a, double b);
 
 double soma(double a, double b) {
     return a + b;
@@ -47,23 +48,48 @@ double exponencial(double a, double b) {
 }
 
 double seno(double a) {
-    double soma = 0;
 
     for(int i = 0; i < 20; i++) {
-        soma += (exponencial(-1.0, i) / fatorial(2.0 * i + 1)) * exponencial(a,  2.0 * i + 1) ;
+        serie += (exponencial(-1.0, i) / fatorial(2.0 * i + 1)) * exponencial(a,  2.0 * i + 1) ;
     }
 
-    return soma;
+    return serie;
 }
 
-double cosseno(double a){
-    double soma = 0;
+double cosseno(double a) {
 
     for(int i = 0; i < 20; i++) {
-        soma += (exponencial(-1, i) / fatorial(2 * i)) * exponencial(a, 2 * i);
+        serie += (exponencial(-1, i) / fatorial(2 * i)) * exponencial(a, 2 * i);
     }
 
-    return soma;
+    return serie;
+}
+
+double tangente(double a) {
+    return seno(a) / cosseno(a);
+}
+
+double exponencialNatural(double a) {
+
+        for(int i = 0; i < 20; i++) {
+            serie += exponencial(a, i) / fatorial(i);
+        }
+
+    return serie;
+}
+
+double logNatural(double a) {
+    if (a > 0) {
+        for(int i = 0; i < 20; i++) {
+            serie += 2 * (1 / (2 * i + 1)) * exponencial(((a - 1) / (a + 1)), (2 * i + 1));
+        }
+    }
+
+    return serie;
+}
+
+double log(double a, double b) {
+    return logNatural(a) / logNatural(b);
 }
 
 int main() {
@@ -110,6 +136,19 @@ int main() {
                 scanf("%lf", &x);
                 resultado = cosseno(x);
                 break;
+        case 't':
+                scanf("%lf", &x);
+                resultado = tangente(x);
+        case 'n':
+                scanf("%lf", &x);
+                resultado = exponencialNatural(x);
+        case 'g':
+                scanf("%lf", &x);
+                resultado = logNatural(x);
+                break;
+        case 'l':
+                scanf("%lf %lf", &x, &y);
+                resultado = log(x, y);        
         default:
                 break;
     }
