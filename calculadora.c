@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 double serie = 0;
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), log(double a, double b);
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), log(double a, double b), raiz(double a, double b);
 
 double soma(double a, double b) {
     return a + b;
@@ -81,15 +81,19 @@ double exponencialNatural(double a) {
 double logNatural(double a) {
     if (a > 0) {
         for(int i = 0; i < 20; i++) {
-            serie += 2 * (1 / (2 * i + 1)) * exponencial(((a - 1) / (a + 1)), (2 * i + 1));
+            serie += (1.0 / (2 * i + 1.0)) * exponencial(((a - 1.0) / (a + 1.0)), (2.0 * i + 1.0));
         }
     }
 
-    return serie;
+    return 2 * serie;
 }
 
 double log(double a, double b) {
     return logNatural(a) / logNatural(b);
+}
+
+double raiz(double a, double b) {
+    return exponencialNatural((1.0 / b) * logNatural(a));
 }
 
 int main() {
@@ -148,7 +152,10 @@ int main() {
                 break;
         case 'l':
                 scanf("%lf %lf", &x, &y);
-                resultado = log(x, y);        
+                resultado = log(x, y);
+        case 'r':
+                scanf("%lf %lf", &x, &y);
+                resultado = raiz(x, y);
         default:
                 break;
     }
