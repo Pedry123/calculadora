@@ -48,7 +48,7 @@ double exponencial(double a, double b) {
 double seno(double a) {
     double serie = 0;
     for(int i = 0; i < 20; i++) {
-        serie += (exponencial(-1.0, i) / fatorial(2.0 * i + 1)) * exponencial(a,  2.0 * i + 1) ;
+        serie += (exponencial(-1.0, i) / fatorial(2.0 * i + 1.0)) * exponencial(a,  2.0 * i + 1.0) ;
     }
 
     return serie;
@@ -57,7 +57,7 @@ double seno(double a) {
 double cosseno(double a) {
     double serie = 0;
     for(int i = 0; i < 20; i++) {
-        serie += (exponencial(-1, i) / fatorial(2 * i)) * exponencial(a, 2 * i);
+        serie += (exponencial(-1.0, i) / fatorial(2.0 * i)) * exponencial(a, 2.0 * i);
     }
 
     return serie;
