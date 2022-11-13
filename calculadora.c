@@ -90,16 +90,11 @@ double logNatural(double a) {
 }
 
 double logaritmo(double a, double b) {
-    if (a > 0 && b > 0) {
         return logNatural(a) / logNatural(b);
-    }
 }
 
 double raiz(double a, double b) {
-
-    if (a > 0 && b > 0) {
         return exponencialNatural((1.0 / b) * logNatural(a));
-    }
 }
 
 int main() {
