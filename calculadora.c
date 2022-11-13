@@ -35,7 +35,7 @@ double fatorial(double a) {
     return fat;
 }
 
-double exponencial(double a, double b) { // Operacao que eleva um número a outro.
+double exponencial(double a, double b) { // Operacao que eleva um numero a outro.
     double exp = 1.0;
     if (b != 0.0) { 
 
@@ -94,7 +94,7 @@ double logaritmo(double a, double b) {
         return logNatural(a) / logNatural(b);
 }
 
-double raiz(double a, double b) { // Operacao da raiz enesima. O primeiro parâmetro eh o radicando, e o segundo eh o indice.
+double raiz(double a, double b) { // Operacao da raiz enesima. O primeiro parametro eh o radicando, e o segundo eh o indice.
         return exponencialNatural((1.0 / b) * logNatural(a));
 }
 
