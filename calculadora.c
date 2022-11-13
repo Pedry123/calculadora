@@ -28,7 +28,7 @@ double modulo(double a) {
 }
 
 long double fatorial(long double a) {
-    long double fat = 1;
+    long double fat = 1.0;
     for(int i = a; i > 1; i--) {
         fat *= i;
     }
