@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), logaritmo(double a, double b), raiz(double a, double b);
-long double fatorial(long double a);
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), logaritmo(double a, double b), raiz(double a, double b);
+
 
 double soma(double a, double b) {
     return a + b;
@@ -27,9 +27,9 @@ double modulo(double a) {
     }
 }
 
-long double fatorial(long double a) {
-    long double fat = 1.0;
-    for(int i = a; i > 1; i--) {
+double fatorial(double a) {
+    double fat = 1.0;
+    for(int i = 1; i <= a; i++) {
         fat *= i;
     }
     return fat;
