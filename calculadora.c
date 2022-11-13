@@ -142,6 +142,7 @@ int main() {
         case 't':
                 scanf("%lf", &x);
                 resultado = tangente(x);
+                break;
         case 'n':
                 scanf("%lf", &x);
                 resultado = exponencialNatural(x);
