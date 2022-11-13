@@ -151,7 +151,7 @@ int main() {
                 break;
         case 'l':
                 scanf("%lf %lf", &x, &y);
-                resultado = log(x, y);
+                resultado = logaritmo(x, y);
                 break;
         case 'r':
                 scanf("%lf %lf", &x, &y);
