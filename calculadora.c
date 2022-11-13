@@ -156,16 +156,25 @@ int main() {
                 break;
         case 'g':
                 scanf("%lf", &x);
-                resultado = logNatural(x);
-                break;
+                if (x > 0) {
+                    resultado = logNatural(x);
+                    break;
+                }
+                return -1;
         case 'l':
-                scanf("%lf %lf", &x, &y);
-                resultado = logaritmo(x, y);
-                break;
+                if (x > 0 && y > 0) {
+                    scanf("%lf %lf", &x, &y);
+                    resultado = logaritmo(x, y);
+                    break;
+                }  
+                return -1;
         case 'r':
-                scanf("%lf %lf", &x, &y);
-                resultado = raiz(x, y);
-                break;
+                if (x > 0 && y > 0) {
+                    scanf("%lf %lf", &x, &y);
+                    resultado = raiz(x, y);
+                    break;
+                }
+                return -1;
         default:
                 break;
     }
