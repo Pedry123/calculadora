@@ -1,6 +1,6 @@
-#include<stdio.h> // Biblioteca padrão de funções de entrada e saída.
+#include<stdio.h> // Biblioteca padrao de funcoes de entrada e saida.
 
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), logaritmo(double a, double b), raiz(double a, double b); // Declaração das funções.
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), logaritmo(double a, double b), raiz(double a, double b); // Declaracao das funcoes.
 
 
 double soma(double a, double b) { 
@@ -35,7 +35,7 @@ double fatorial(double a) {
     return fat;
 }
 
-double exponencial(double a, double b) { // Operação que eleva um número a outro.
+double exponencial(double a, double b) { // Operacao que eleva um número a outro.
     double exp = 1.0;
     if (b != 0.0) { 
 
@@ -46,7 +46,7 @@ double exponencial(double a, double b) { // Operação que eleva um número a ou
     return exp;
 }
 
-double seno(double a) { // As funções seno, cosseno e tangente estão em radianos.
+double seno(double a) { // As funcoes seno, cosseno e tangente estao em radianos.
     double serie = 0.0;
     for(int i = 0; i < 20; i++) {
         serie += (exponencial(-1.0, i) / fatorial(2.0 * i + 1.0)) * exponencial(a,  2.0 * i + 1.0);
@@ -68,7 +68,7 @@ double tangente(double a) {
     return seno(a) / cosseno(a);
 }
 
-double exponencialNatural(double a) { // Operação de exponencial, cuja base é o número de Euler.
+double exponencialNatural(double a) { // Operacao de exponencial, cuja base eh o numero de Euler.
     double serie = 0.0;
 
     for(int i = 0; i < 20; i++) {
@@ -78,7 +78,7 @@ double exponencialNatural(double a) { // Operação de exponencial, cuja base é
     return serie;
 }
 
-double logNatural(double a) { // Operação de logaritmo natural, isto é, cuja base é Euler.
+double logNatural(double a) { // Operacao de logaritmo natural, isto eh, cuja base eh Euler.
     double serie = 0.0;
 
     if (a > 0) {
@@ -94,7 +94,7 @@ double logaritmo(double a, double b) {
         return logNatural(a) / logNatural(b);
 }
 
-double raiz(double a, double b) { // Operação da raíz enésima. O primeiro parâmetro é o radicando, e o segundo é o índice.
+double raiz(double a, double b) { // Operacao da raiz enesima. O primeiro parâmetro eh o radicando, e o segundo eh o indice.
         return exponencialNatural((1.0 / b) * logNatural(a));
 }
 
@@ -104,7 +104,7 @@ int main() { // Programa principal
 
     scanf("%c", &operacao);
 
-    switch (operacao) { //De acordo com a leitura do caractere, será feita a operação desejada.
+    switch (operacao) { //De acordo com a leitura do caractere, sera feita a operacao desejada.
         case '+':
                 scanf("%lf %lf", &x, &y); 
                 resultado = soma(x, y);
@@ -158,7 +158,7 @@ int main() { // Programa principal
                     resultado = logNatural(x);
                     break;
                 }
-                return -1; // Encerramento do programa, quando as condições da operação não são satisfeitas.
+                return -1; // Encerramento do programa, quando as condicoes da operacao nao sao satisfeitas.
         case 'l':
                 scanf("%lf %lf", &x, &y);
                 if (x > 0.0 && y > 0.0) {
@@ -177,6 +177,6 @@ int main() { // Programa principal
                 break;
     }
 
-    printf("%.2f", resultado); // Print com precisão de duas casas decimais.
+    printf("%.2f", resultado); // Print com precisao de duas casas decimais.
     return 0;
 }
