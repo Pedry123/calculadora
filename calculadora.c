@@ -69,6 +69,7 @@ double tangente(double a) {
 
 double exponencialNatural(double a) {
     double serie = 0;
+
     for(int i = 0; i < 20; i++) {
         serie += exponencial(a, i) / fatorial(i);
     }
@@ -78,6 +79,7 @@ double exponencialNatural(double a) {
 
 double logNatural(double a) {
     double serie = 0;
+
     if (a > 0) {
         for(int i = 0; i < 20; i++) {
             serie += (1.0 / (2 * i + 1.0)) * exponencial(((a - 1.0) / (a + 1.0)), (2.0 * i + 1.0));
@@ -88,11 +90,16 @@ double logNatural(double a) {
 }
 
 double logaritmo(double a, double b) {
-    return logNatural(a) / logNatural(b);
+    if (a > 0 && b > 0) {
+        return logNatural(a) / logNatural(b);
+    }
 }
 
 double raiz(double a, double b) {
-    return exponencialNatural((1.0 / b) * logNatural(a));
+
+    if (a > 0 && b > 0) {
+        return exponencialNatural((1.0 / b) * logNatural(a));
+    }
 }
 
 int main() {
@@ -146,6 +153,7 @@ int main() {
         case 'n':
                 scanf("%lf", &x);
                 resultado = exponencialNatural(x);
+                break;
         case 'g':
                 scanf("%lf", &x);
                 resultado = logNatural(x);
