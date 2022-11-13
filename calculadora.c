@@ -157,15 +157,15 @@ int main() {
                 }
                 return -1;
         case 'l':
+                scanf("%lf %lf", &x, &y);
                 if (x > 0 && y > 0) {
-                    scanf("%lf %lf", &x, &y);
                     resultado = logaritmo(x, y);
                     break;
                 }  
                 return -1;
         case 'r':
+                scanf("%lf %lf", &x, &y);
                 if (x > 0 && y > 0) {
-                    scanf("%lf %lf", &x, &y);
                     resultado = raiz(x, y);
                     break;
                 }
