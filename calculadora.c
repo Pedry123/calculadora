@@ -127,8 +127,11 @@ int main() {
                 break;
         case 'f':
                 scanf("%lf", &x);
-                resultado = fatorial(x);
-                break;
+                if (x > 0) {
+                    resultado = fatorial(x);
+                    break;
+                }
+                return -1;
         case 'e':
                 scanf("%lf %lf", &x, &y);
                 resultado = exponencial(x, y);
