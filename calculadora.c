@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), log(double a, double b), raiz(double a, double b);
+double soma(double a, double b), subtracao(double a, double b), multiplicacao(double a, double b), divisao(double a, double b), modulo(double a), fatorial(double a), exponencial(double a, double b), seno(double a), cosseno(double a), tangente(double a), exponencialNatural(double a), logNatural(double a), logaritmo(double a, double b), raiz(double a, double b);
 
 double soma(double a, double b) {
     return a + b;
@@ -87,7 +87,7 @@ double logNatural(double a) {
     return 2 * serie;
 }
 
-double log(double a, double b) {
+double logaritmo(double a, double b) {
     return logNatural(a) / logNatural(b);
 }
 
